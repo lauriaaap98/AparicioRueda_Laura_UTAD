@@ -1,0 +1,39 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/noticiasGenerales">
+
+    <fragment
+        android:id="@+id/noticiasDeportes"
+        android:name="com.example.actividad2u2.NoticiasDeportes"
+        android:label="fragment_noticias_deportes"
+        tools:layout="@layout/fragment_noticias_deportes" />
+
+    <fragment
+        android:id="@+id/noticiasGenerales"
+        android:name="com.example.actividad2u2.NoticiasGenerales"
+        android:label="fragment_noticias_generales"
+        tools:layout="@layout/fragment_noticias_generales" >
+        <action
+            android:id="@+id/action_noticiasGenerales_to_noticiasTecnologia"
+            app:destination="@id/noticiasTecnologia" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noticiasTecnologia"
+        android:name="com.example.actividad2u2.NoticiasTecnologia"
+        android:label="fragment_noticias_tecnlogia"
+        tools:layout="@layout/fragment_noticias_tecnlogia" >
+
+        <action
+            android:id="@+id/action_noticiasTecnologia_to_noticiasDeportes"
+            app:destination="@id/noticiasDeportes" />
+    </fragment>
+    <!-- Nuevo destino para combinar noticias -->
+    <fragment
+        android:id="@+id/combinacionDeNoticias"
+        android:name="com.example.actividad2u2.CombinacionDeNoticiasFragment"
+        android:label="Combinación de Noticias"
+        tools:layout="@layout/fragment_combinacion_de_noticias" />
+</navigation>
